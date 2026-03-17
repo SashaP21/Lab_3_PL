@@ -15,34 +15,34 @@ int main() {
     setlocale(LC_ALL, "russian");
 
     vector<Student> students = loadStudentsFromFile("students.txt");
-    cout << "Полный список студентов:\n";
+    cout << "РџРѕР»РЅС‹Р№ СЃРїРёСЃРѕРє СЃС‚СѓРґРµРЅС‚РѕРІ:\n";
     for (const Student& student : students)
         cout << student.getFullStudentInfo() << "\n";
     cout << "\n";
 
     vector<Teacher> teachers = loadTeachersFromFile("teachers.txt");
-    cout << "Полный список преподавателей:\n";
+    cout << "РџРѕР»РЅС‹Р№ СЃРїРёСЃРѕРє РїСЂРµРїРѕРґР°РІР°С‚РµР»РµР№:\n";
     for (const Teacher& teacher : teachers)
         cout << teacher.getFullTeacherInfo() << "\n";
 
     saveStudentsToFile("students2.txt", students);
     saveTeachersToFile("teachers2.txt", teachers);
 
-    cout << "1)	краткая информация обо всех студентах, у которых средний балл больше 4:\n";
+    cout << "1)	РєСЂР°С‚РєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР±Рѕ РІСЃРµС… СЃС‚СѓРґРµРЅС‚Р°С…, Сѓ РєРѕС‚РѕСЂС‹С… СЃСЂРµРґРЅРёР№ Р±Р°Р»Р» Р±РѕР»СЊС€Рµ 4:\n";
     for (const Student& student : students) {
         if (student.getAverageScore() > 4)
             cout << student.getShortStudentInfo() << "\n";
     }
     cout << "\n";
 
-    cout << "2)	краткая информация обо всех студентах, у которых средний балл меньше 3:\n";
+    cout << "2)	РєСЂР°С‚РєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР±Рѕ РІСЃРµС… СЃС‚СѓРґРµРЅС‚Р°С…, Сѓ РєРѕС‚РѕСЂС‹С… СЃСЂРµРґРЅРёР№ Р±Р°Р»Р» РјРµРЅСЊС€Рµ 3:\n";
     for (const Student& student : students) {
         if (student.getAverageScore() < 3)
             cout << student.getShortStudentInfo() << "\n";
     }
     cout << "\n";
 
-    cout << "3)	полная информация о студенте, у которого больше всего оценок:\n";
+    cout << "3)	РїРѕР»РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ СЃС‚СѓРґРµРЅС‚Рµ, Сѓ РєРѕС‚РѕСЂРѕРіРѕ Р±РѕР»СЊС€Рµ РІСЃРµРіРѕ РѕС†РµРЅРѕРє:\n";
     int max_scores_amount = 0;
     Student st;
     for (const Student& student : students) {
@@ -53,28 +53,28 @@ int main() {
     }
     cout << st.getFullStudentInfo() << "\n\n";
 
-    cout << "4)	краткая информация обо всех доцентах:\n";
+    cout << "4)	РєСЂР°С‚РєР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР±Рѕ РІСЃРµС… РґРѕС†РµРЅС‚Р°С…:\n";
     for (const Teacher& teacher : teachers) {
-        if (teacher.getPosition() == "Доцент")
+        if (teacher.getPosition() == "Р”РѕС†РµРЅС‚")
             cout << teacher.getShortTeacherInfo() << "\n";
     }
     cout << "\n";
 
-    cout << "5)	полная информация о профессоре, у которого больше всего предметов:\n";
+    cout << "5)	РїРѕР»РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ Рѕ РїСЂРѕС„РµСЃСЃРѕСЂРµ, Сѓ РєРѕС‚РѕСЂРѕРіРѕ Р±РѕР»СЊС€Рµ РІСЃРµРіРѕ РїСЂРµРґРјРµС‚РѕРІ:\n";
     int max_subject_amount = 0;
     Teacher t;
     for (const Teacher& teacher : teachers) {
-        if ((teacher.getPosition() == "Профессор") && (teacher.getSubjects().size() >= max_subject_amount)) {
+        if ((teacher.getPosition() == "РџСЂРѕС„РµСЃСЃРѕСЂ") && (teacher.getSubjects().size() >= max_subject_amount)) {
             max_subject_amount = teacher.getSubjects().size();
             t = teacher;
         }
     }
     cout << t.getFullTeacherInfo() << "\n\n";
 
-    cout << "6)	полная информация обо всех преподавателях, которые ведут информатику:\n";
+    cout << "6)	РїРѕР»РЅР°СЏ РёРЅС„РѕСЂРјР°С†РёСЏ РѕР±Рѕ РІСЃРµС… РїСЂРµРїРѕРґР°РІР°С‚РµР»СЏС…, РєРѕС‚РѕСЂС‹Рµ РІРµРґСѓС‚ РёРЅС„РѕСЂРјР°С‚РёРєСѓ:\n";
     for (const Teacher& teacher : teachers) {
         vector<string> subjects = teacher.getSubjects();
-        if (std::find(subjects.begin(), subjects.end(), "Информатика") != subjects.end())
+        if (std::find(subjects.begin(), subjects.end(), "РРЅС„РѕСЂРјР°С‚РёРєР°") != subjects.end())
             cout << teacher.getFullTeacherInfo() << "\n";
     }
 }
