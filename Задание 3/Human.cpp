@@ -6,9 +6,9 @@ using std::string;
 using std::stringstream;
 
 Human::Human() {
-    this->name = "Неизвестно";
-    this->surname = "Неизвестно";
-    this->patronymic = "Неизвестно";
+    this->name = "РќРµРёР·РІРµСЃС‚РЅРѕ";
+    this->surname = "РќРµРёР·РІРµСЃС‚РЅРѕ";
+    this->patronymic = "РќРµРёР·РІРµСЃС‚РЅРѕ";
 }
 
 Human::Human(string name, string surname, string patronymic) {

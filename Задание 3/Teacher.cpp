@@ -11,19 +11,19 @@ using std::vector;
 
 string Teacher::Position_to_string(Position position){
     switch (position) {
-        case Position::Assistant: return "Ассистент";
-        case Position::SeniorLecturer: return "СтаршийПреподаватель";
-        case Position::AssociateProfessor: return "Доцент";
-        case Position::Professor: return "Профессор";
-        default: return "Неизвестно";
+        case Position::Assistant: return "РђСЃСЃРёСЃС‚РµРЅС‚";
+        case Position::SeniorLecturer: return "РЎС‚Р°СЂС€РёР№РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ";
+        case Position::AssociateProfessor: return "Р”РѕС†РµРЅС‚";
+        case Position::Professor: return "РџСЂРѕС„РµСЃСЃРѕСЂ";
+        default: return "РќРµРёР·РІРµСЃС‚РЅРѕ";
     }
 }
 
 Teacher::Position Teacher::string_to_Position(string position) {
-    if (position == "Ассистент") return Position::Assistant;
-    if (position == "СтаршийПреподаватель") return Position::SeniorLecturer;
-    if (position == "Доцент") return Position::AssociateProfessor;
-    if (position == "Профессор") return Position::Professor;
+    if (position == "РђСЃСЃРёСЃС‚РµРЅС‚") return Position::Assistant;
+    if (position == "РЎС‚Р°СЂС€РёР№РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ") return Position::SeniorLecturer;
+    if (position == "Р”РѕС†РµРЅС‚") return Position::AssociateProfessor;
+    if (position == "РџСЂРѕС„РµСЃСЃРѕСЂ") return Position::Professor;
     return Position::Unknown;
 }
 
@@ -63,7 +63,7 @@ vector<Teacher> loadTeachersFromFile(string filename) {
     std::ifstream f_in(filename);
     string line;
     if (!f_in) {
-        std::cout << "Не удалось открыть файл: " << filename << "\n";
+        std::cout << "РќРµ СѓРґР°Р»РѕСЃСЊ РѕС‚РєСЂС‹С‚СЊ С„Р°Р№Р»: " << filename << "\n";
         return teachers;
     }
     while (std::getline(f_in, line)) {

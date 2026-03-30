@@ -49,7 +49,7 @@ vector<Student> loadStudentsFromFile(string filename) {
     std::ifstream f_in(filename);
     string line;
     if (!f_in) {
-       std::cout << "Íå óäàëîñü îòêðûòü ôàéë: " << filename << "\n";
+       std::cout << "ÐÐµ ÑƒÐ´Ð°Ð»Ð¾ÑÑŒ Ð¾Ñ‚ÐºÑ€Ñ‹Ñ‚ÑŒ Ñ„Ð°Ð¹Ð»: " << filename << "\n";
         return students;
     }
     while (std::getline(f_in, line)) {
